@@ -1,0 +1,108 @@
+{
+    "products": [
+        {
+            "product_id": "1",
+            "product_name": "thing1",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 1,
+            "product_is_close": 0,
+            "product_is_paused": 1 
+        }, {
+            "product_id": "2",
+            "product_name": "thing2",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 1,
+            "product_is_close": 0,
+            "product_is_paused": 1
+        }, {
+            "id": "3",
+            "product_name": "thing3",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "is_active": 1,
+            "is_close": 0,
+            "is_paused": 1
+        },  {
+            "product_id": "4",
+            "product_name": "thing4",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 0,
+            "product_is_close": 1,
+            "product_is_paused": 0
+        }, {
+            "product_id": "5",
+            "product_name": "thing5",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 0,
+            "product_is_close": 1,
+            "product_is_paused": 0
+        },  {
+            "product_id": "6",
+            "product_name": "thing6",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 1,
+            "product_is_close": 0,
+            "product_is_paused": 0 
+        }, {
+            "product_id": "7",
+            "product_name": "thing7",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 1,
+            "product_is_close": 0,
+            "product_is_paused": 0
+        }, {
+            "product_id": "8",
+            "product_name": "thing8",
+            "product_img": "",
+            "product_price": "500.34$",
+            "product_dtl": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "product_catagory": "other",
+            "product_is_active": 1,
+            "product_is_close": 0,
+            "product_is_paused": 0
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

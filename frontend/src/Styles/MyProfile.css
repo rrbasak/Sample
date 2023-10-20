@@ -1,0 +1,55 @@
+/* MyProfile.css */
+.user-profile {
+    max-width: 600px;
+    /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar {
+    text-align: right;
+    /* Align the image to the right */
+}
+
+.profile-avatar img {
+    max-width: 100px;
+    /* Adjust the image size as needed */
+    border-radius: 50%;
+    /* Make the image circular */
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    /* Adjust the font size as needed */
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    /* Adjust the font size as needed */
+    margin-bottom: 5px;
+}
+
+.profile-description {
+    margin-top: 20px;
+}
+
+.profile-description h3 {
+    font-size: 20px;
+    /* Adjust the font size as needed */
+    margin-bottom: 10px;
+}
+
+.profile-description p {
+    font-size: 16px;
+    /* Adjust the font size as needed */
+    line-height: 1.5;
+    /* Add line spacing between paragraphs */
+}

@@ -1,0 +1,73 @@
+.dashboard {
+    .navbar {
+        margin-bottom: 70px;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: black;
+        padding-top: 20px;
+        transition: box-shadow 0.3s ease;
+        /* Add transition for smooth glow effect */
+    }
+
+    .sidenav:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        /* Add white glow effect on hover */
+    }
+
+    .sidenav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidenav li {
+        color: green;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .sidenav li:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        /* Add white glow effect on hover */
+    }
+
+    .dashboard-content {
+        padding: 2px;
+        /* Adjust the content padding as needed */
+        padding-left: 370px;
+    }
+
+    .dashboard-item {
+        justify-content: flex;
+        /* Align text to the start (left) */
+        background-color: black;
+        color: antiquewhite;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        transition: all 0.3s ease;
+        /* Add transition for smooth hover effect */
+    }
+
+    .dashboard-item:hover {
+        background-color: #333;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    }
+
+    .arrow-icon {
+        color: green;
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+}

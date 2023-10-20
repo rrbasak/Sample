@@ -1,0 +1,31 @@
+/* @keyframes fireworks {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.firework {
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    position: absolute;
+    animation: fireworks 1s linear infinite;
+}
+ */
+
+
+
+
+
+
+
+
+
+ 

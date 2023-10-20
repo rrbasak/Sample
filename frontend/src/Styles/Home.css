@@ -1,0 +1,21 @@
+.card-container {
+    opacity: 0;
+    /* Initially hide the cards */
+    transition: opacity 0.5s ease-in-out;
+    /* Add a smooth transition effect */
+}
+
+/* Styling for the fade-in effect when cards appear */
+.card-fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card-container.show {
+    opacity: 1;
+    /* When the cards are in the viewport, show them */
+}
+
+.card-fade-in.show {
+    opacity: 1;
+}

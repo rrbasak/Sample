@@ -1,0 +1,33 @@
+.auction-container {
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 10px;
+    margin-bottom: 50px;
+}
+
+.box {
+    border: none;
+    transition: all .5s;
+}
+
+.box:hover {
+    box-shadow: 0 0 10px 5px rgb(8, 91, 159);
+    transform: scale(1.02);
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.live {
+    
+}
+
+.upcoming {
+}
+
+.previous {
+}

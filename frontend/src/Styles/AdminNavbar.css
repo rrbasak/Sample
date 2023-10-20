@@ -1,0 +1,58 @@
+.dashboard-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  /* Container Box Styles */
+  .container-box {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .side-navbar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+/* Side Navbar Styles */
+.side-navbar {
+    width: 200px;
+    height: 100vh;
+    background-color: #222;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  .side-navbar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .side-navbar li {
+    margin-bottom: 20px;
+  }
+  .side-navbar a {
+    color: #28A745;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .side-navbar i {
+    margin-right: 10px;
+  }
+  /* Active Link Styles */
+  .side-navbar .active {
+    font-weight: bold;
+  }
+  /* Hover Effect for Side Navbar Links */
+  .side-navbar a:hover {
+    color: #FFFFFF;
+  }
