@@ -498,6 +498,7 @@ export function Register() {
                       value={fb}
                       onChange={(e) => setFb(e.target.value)}
                       fullWidth
+                      required
                     />
                   </div>
                 </div>
@@ -516,6 +517,7 @@ export function Register() {
                       value={insta}
                       onChange={(e) => setInsta(e.target.value)}
                       fullWidth
+                      required
                     />
                   </div>
                 </div>
@@ -534,6 +536,7 @@ export function Register() {
                       value={twitter}
                       onChange={(e) => setTwitter(e.target.value)}
                       fullWidth
+                      required
                     />
                   </div>
                 </div>
