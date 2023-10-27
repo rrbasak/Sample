@@ -87,7 +87,7 @@ export function BidderNavbar() {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <Link className="navbar-brand" to="/view-product">
+          <Link className="navbar-brand" to="/auction">
             <h1>mAuction</h1>
           </Link>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">

@@ -34,8 +34,8 @@ public class Observer {
 			@RequestPart("mobileno") String phno, @RequestPart("username") String username,
 			@RequestPart("password") String password, @RequestPart("type") String type,
 			@RequestPart("deg") String desx, @RequestPart("about") String about,@RequestPart("address") String address,
-			@RequestPart("fb") String fb,@RequestPart("insta") String insta,@RequestPart("twitter") String twitter, @RequestPart("name") String name,
-			@RequestParam("file") MultipartFile file) {
+			@RequestPart(name="fb",required = false) String fb,@RequestPart(name="insta",required = false) String insta,@RequestPart(name="twitter" ,required = false) String twitter, @RequestPart("name") String name,
+			@RequestParam(name="file",required = false) MultipartFile file) {
 		Users data = new Users();
 		try {
 			System.out.print(dob+username+password+type+desx+about+name+file.getSize());

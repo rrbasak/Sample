@@ -17,27 +17,30 @@ import {
   MDBListGroupItem,
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import Auction from "./Auction";
 export function MyProfile() {
   const img_id = localStorage.getItem("id");
-  const { islogined, uname,name } = useSelector((state) => state);
+  const type = localStorage.getItem("type");
+  console.log(type + "type");
+  const { islogined, uname, name } = useSelector((state) => state);
   const [logdata, setLogdata] = useState(null);
-   useEffect(() => {
-     const storedData = JSON.parse(localStorage.getItem("userProfile"));
-     if (storedData) {
-       setLogdata(storedData);
-     } else {
-       axios
-         .get(`http://localhost:8080/get/${uname}`)
-         .then((response) => {
-           setLogdata(response.data);
-           localStorage.setItem("userProfile", JSON.stringify(response.data));
-         })
-         .catch((err) => {
-           console.error(err);
-         });
-     }
-   }, [uname]);
-  console.log(name)
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("userProfile"));
+    if (storedData) {
+      setLogdata(storedData);
+    } else {
+      axios
+        .get(`http://localhost:8080/get/${uname}`)
+        .then((response) => {
+          setLogdata(response.data);
+          localStorage.setItem("userProfile", JSON.stringify(response.data));
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, [uname]);
+  console.log(name);
   //  useEffect(() => {
   //    const storedData = JSON.parse(localStorage.getItem("userProfile"));
   //    if (storedData) {
@@ -64,6 +67,9 @@ export function MyProfile() {
   // console.log(role);
   console.log(uname);
   console.log(logdata);
+  if (logdata) {
+    console.log(logdata.type);
+  }
   return (
     <>
       {logdata && (
@@ -73,8 +79,15 @@ export function MyProfile() {
               <MDBCol>
                 <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
                   <MDBBreadcrumbItem>
-                  
-                    <Link to="/view-product" element={<ViewProduct/>}>Home</Link>
+                    {logdata && logdata.type === "seller" ? (
+                      <Link to="/view-product" element={<ViewProduct />}>
+                        Home
+                      </Link>
+                    ) : (
+                      <Link to="/auction" element={<Auction />}>
+                        Home
+                      </Link>
+                    )}
                   </MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
                 </MDBBreadcrumb>
@@ -85,11 +98,14 @@ export function MyProfile() {
                 <MDBCard className="mb-4">
                   <MDBCardBody className="text-center">
                     <MDBCardImage
-                      src={`http://localhost:8080/user/get/file/${img_id}`}
-                      // src="images/com.jpg"
+                      src={
+                        img_id
+                          ? `http://localhost:8080/user/get/file/${img_id}`
+                          : "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      }
                       alt="avatar"
                       className="rounded-circle"
-                      style={{ width: "150px" ,height: "150px"}}
+                      style={{ width: "150px", height: "150px" }}
                       fluid
                     />
                     <p className="text-muted mb-1">{logdata.desx}</p>
@@ -118,14 +134,31 @@ export function MyProfile() {
                           class="fa fa-facebook"
                           style={{ color: "#3B5998", fontSize: "36px" }}
                         />
-                        <MDBCardText><Link to={logdata.fb} style={{textDecoration:"none"}} target="_blank">Facebook</Link></MDBCardText>
+                        <MDBCardText>
+                          <Link
+                            to={logdata.fb}
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                          >
+                            Facebook
+                          </Link>
+                        </MDBCardText>
                       </MDBListGroupItem>
                       <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                         <i
                           class="fa fa-twitter"
                           style={{ color: "blue", fontSize: "36px" }}
                         ></i>
-                        <MDBCardText> <Link to={logdata.twitter} style={{textDecoration:"none"}} target="_blank">Twitter</Link> </MDBCardText>
+                        <MDBCardText>
+                          {" "}
+                          <Link
+                            to={logdata.twitter}
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                          >
+                            Twitter
+                          </Link>{" "}
+                        </MDBCardText>
                       </MDBListGroupItem>
                       <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                         <MDBIcon
@@ -133,7 +166,15 @@ export function MyProfile() {
                           class="fa fa-instagram"
                           style={{ color: "rgb(251,12,172)", fontSize: "36px" }}
                         />
-                        <MDBCardText><Link to={logdata.insta} style={{textDecoration:"none"}} target="_blank">Instagram</Link></MDBCardText>
+                        <MDBCardText>
+                          <Link
+                            to={logdata.insta}
+                            style={{ textDecoration: "none" }}
+                            target="_blank"
+                          >
+                            Instagram
+                          </Link>
+                        </MDBCardText>
                       </MDBListGroupItem>
                     </MDBListGroup>
                   </MDBCardBody>
