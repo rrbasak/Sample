@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import validator from "validator";
-import "../../Styles/Navbar.css"
+import "../../Styles/Navbar.css";
 import {
   isloginasbidder,
   isloginasseller,
@@ -39,7 +39,6 @@ export function Register() {
   const [usernameError, setUsernameError] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [cpassworderror, setCpasswordError] = useState("");
-
 
   const userRef = useRef("");
   const mobileRef = useRef("");
@@ -83,15 +82,14 @@ export function Register() {
       about: about,
       deg: deg,
       file: file,
-      fb:fb,
-      insta:insta,
-      twitter:twitter
+      fb: fb,
+      insta: insta,
+      twitter: twitter,
     };
     console.log(data);
 
     await axios
       .post("http://localhost:8080/user/save", data, {
-        
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -102,13 +100,17 @@ export function Register() {
       .catch((e) => {
         console.log(e);
       });
-    const logdata = await axios.get(`http://localhost:8080/user/get/${username}`).then((response) => { return response.data })
-    console.log(logdata)
+    const logdata = await axios
+      .get(`http://localhost:8080/user/get/${username}`)
+      .then((response) => {
+        return response.data;
+      });
+    console.log(logdata);
     if (type === "seller") {
       localStorage.setItem("role", "seller");
       localStorage.setItem("isloggedin", "true");
       localStorage.setItem("name", name);
-      localStorage.setItem("userName", username)
+      localStorage.setItem("userName", username);
       localStorage.setItem("id", logdata.id);
       dispatch(isloginasseller(["seller", username, password]));
       navigate("/view-product");
@@ -117,11 +119,10 @@ export function Register() {
       localStorage.setItem("isloggedin", "true");
       localStorage.setItem("id", logdata.id);
       localStorage.setItem("name", name);
-      localStorage.setItem("userName", username)
+      localStorage.setItem("userName", username);
       dispatch(isloginasbidder(["bidder", username, password]));
       navigate("/auction");
     }
-
   };
   const validate = (value) => {
     if (
@@ -158,26 +159,22 @@ export function Register() {
     }
   };
 
-
-
-
   const handleCPasswordChange = (e) => {
     if (password !== cpassword) {
       setCpasswordError("Password does not match");
     } else {
       setCpasswordError("");
     }
-
   };
-
-
-
 
   return (
     <div className="register">
       <div className="container" style={{ marginTop: "100px" }}>
         <div className="row">
-          <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow" style={{ background: "white" }}>
+          <div
+            className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow"
+            style={{ background: "white" }}
+          >
             <h2 className="text-center m-4">Register User</h2>
             <form onSubmit={submitHandler}>
               {/* firtname middlename and lastname*/}
@@ -393,7 +390,6 @@ export function Register() {
                           <InputAdornment position="start">+91</InputAdornment>
                         ),
                       }}
-                      required
                       inputRef={mobileRef}
                     />
                   </div>
@@ -409,7 +405,10 @@ export function Register() {
                         onChange={(e) => setType(e.target.value)}
                         required
                       />
-                      <label className="form-check-label" htmlFor="inlineRadio1">
+                      <label
+                        className="form-check-label"
+                        htmlFor="inlineRadio1"
+                      >
                         Bidder
                       </label>
                     </div>
@@ -424,7 +423,10 @@ export function Register() {
                         onChange={(e) => setType(e.target.value)}
                         required
                       />
-                      <label className="form-check-label" htmlFor="inlineRadio2">
+                      <label
+                        className="form-check-label"
+                        htmlFor="inlineRadio2"
+                      >
                         Seller
                       </label>
                     </div>
@@ -441,7 +443,7 @@ export function Register() {
                       ref={fileRef}
                       onChange={handleFileChange}
                       accept=".jpg, .jpeg, .png"
-                    // required
+                      // required
                     />
                   </div>
                 </div>
@@ -483,7 +485,6 @@ export function Register() {
                 </div>
               </div>
 
-
               {/* facebook */}
               <div className="mb-3">
                 <div className="row">
@@ -496,14 +497,11 @@ export function Register() {
                       label="Facebook ID"
                       value={fb}
                       onChange={(e) => setFb(e.target.value)}
-                      required
                       fullWidth
                     />
                   </div>
                 </div>
               </div>
-
-
 
               {/* instagram */}
               <div className="mb-3">
@@ -517,7 +515,6 @@ export function Register() {
                       label="Instagram ID"
                       value={insta}
                       onChange={(e) => setInsta(e.target.value)}
-                      required
                       fullWidth
                     />
                   </div>
@@ -536,14 +533,11 @@ export function Register() {
                       label="Twitter ID"
                       value={twitter}
                       onChange={(e) => setTwitter(e.target.value)}
-                      required
                       fullWidth
                     />
                   </div>
                 </div>
               </div>
-
-
 
               {/* Terms and conditions */}
               <div
@@ -560,7 +554,11 @@ export function Register() {
                 <input
                   id="checkbox"
                   type="checkbox"
-                  style={{ height: "1em", width: "1em", verticalAlign: "middle" }}
+                  style={{
+                    height: "1em",
+                    width: "1em",
+                    verticalAlign: "middle",
+                  }}
                   required
                 />
                 <label for="checkbox">

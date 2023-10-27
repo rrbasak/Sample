@@ -35,7 +35,10 @@ export function ForgotPassword() {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
+          <div
+            className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow"
+            style={{ backgroundColor: "#fff" }}
+          >
             <h2 className="text-center m-4">Login User</h2>
             <form onSubmit={submitHandler}>
               <div className="mb-3">
@@ -64,7 +67,7 @@ export function ForgotPassword() {
                 />
               </div>
               <button type="submit" className="btn btn-primary">
-                 RESET
+                RESET
               </button>
               <div>
                 <Link to="/login" style={{ textDecoration: "none" }}>
